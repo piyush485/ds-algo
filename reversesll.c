@@ -9,7 +9,6 @@ typedef struct node
 
 void printsll(node * head)
 {
-    //node * ptr = (node*)malloc(sizeof(node));
     node * ptr = head;
     while(ptr != NULL)
     {
