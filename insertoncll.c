@@ -60,6 +60,8 @@ int main()
         scanf("%d", &ch);
     } while (ch == 1);
 
+    temp->next = head;
+    
     newnode = (node *)malloc(sizeof(node));
     
     printf("Enter the new node to be inserted: ");
