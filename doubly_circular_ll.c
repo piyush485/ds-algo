@@ -53,7 +53,7 @@ void printDCll()
             printf("%d ",temp->data);
             temp = temp->next;
         }
-        while (temp != tail);
+        while (temp != head);
     }
 }
 
