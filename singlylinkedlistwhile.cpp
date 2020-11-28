@@ -29,15 +29,16 @@ int main()
         }
 
         printf("Do you want to enter new node(y/n): ");
-        fflush(stdin);
-        scanf("%d",ch);
+        scanf("%d",&ch);
     }
     
     temp = head;
     while (temp != NULL)
     {
+        {
         printf("%d ",temp->data);
         temp = temp->next;
+        }
     }
     
     return 0;
