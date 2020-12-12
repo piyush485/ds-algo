@@ -80,7 +80,7 @@ int main()
     printf("Enter the element: ");
     scanf("%d", &x);
     top = push(top, x);
-    pop(&top);
+    printf("Popped element is: %d ",pop(&top);
     display(top);
     return 0;
 }
