@@ -68,8 +68,6 @@ int main()
 
     q.arr = (int *)malloc(q.size * sizeof(int));
 
-    int x, ch;
-    
     enqueue(&q, 1);
     
     enqueue(&q, 2);
