@@ -10,7 +10,7 @@ void swap(int *x, int *y)
 
 int quicksort(int a[], int lb, int ub)
 {
-    int i, j , pivot, temp;
+    int i, j , pivot;
     if(lb < ub)
     {
         pivot = lb;

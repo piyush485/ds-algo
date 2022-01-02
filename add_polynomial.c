@@ -101,7 +101,7 @@ int main()
     display(p2);
 
     p3 = add_poly(p1, p2);
-    printf("Final polynomial: ");
+    printf("\nFinal polynomial: ");
     display(p3);
     return 0;
 }

@@ -58,10 +58,9 @@ int main()
     node * head = NULL;
     node * newnode = NULL;
     node * temp = NULL;
-    int n;
-    printf("How many node you want to enter: ");
-    scanf("%d",&n);
-    for(int i = 0 ; i < n ; i++)
+
+    int ch;
+    do
     {
         newnode = (node *)malloc(sizeof(node));
         printf("Enter the new node: ");
@@ -77,26 +76,34 @@ int main()
             temp->next = newnode;
             temp = newnode;
         }
-    }
+        printf("Want to continue: ");
+        scanf("%d", &ch);
+    }while(ch == 1);
 
     //taking newnode to insert at the begining
     newnode = (node *)malloc(sizeof(node));
     printf("Enter the new node you want to insert at the begining of the node: ");
     scanf("%d",&newnode->data);
     head = insertbegining(head, newnode->data);
+    newnode = (node *)malloc(sizeof(node));
+    printf("Enter the new node you want to insert at the begining of the node: ");
+    scanf("%d",&newnode->data);
+    head = insertbegining(head, newnode->data);
+  
+
 
 
     //taking index and node to be entered at the middle of the list
-    printf("Enter the index where you want to enter the node: ");
-    scanf("%d",&n);
-    printf("Enter the node you want to enter: ");
-    scanf("%d",&newnode->data);
-    head = insertbetween(head, newnode->data, n);
+    // printf("Enter the index where you want to enter the node: ");
+    // scanf("%d",&ch);
+    // printf("Enter the node you want to enter: ");
+    // scanf("%d",&newnode->data);
+    // head = insertbetween(head, newnode->data, ch);
 
     //taking newnode to enter the node at the end
-    printf("Enter the node you want to enter at the end: ");
-    scanf("%d",&newnode->data);
-    head = insertend(head,newnode->data);
+    // printf("Enter the node you want to enter at the end: ");
+    // scanf("%d",&newnode->data);
+    // head = insertend(head,newnode->data);
 
     //taking node to enter the node afer a certain enter
     //head = insertafternode(head, prevNode, data)

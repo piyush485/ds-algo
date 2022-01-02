@@ -35,7 +35,7 @@ int main()
         int min = i;
         for(j = i + 1 ; j < n ; j++ )
         {
-            if(arr[j] < arr[min])
+            if(arr[i] < arr[min])
                 min = j;
         }
         if(min != i)

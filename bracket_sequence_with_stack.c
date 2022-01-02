@@ -1,83 +1,41 @@
-#include<stdio.h>
-#include<stdlib.h>
-
-typedef struct stack
-{
-    int size;
-    int top;
-    char * arr;
-}stack;
-
-int isEmpty(stack * s)
-{
-    if(s->top == -1)
-        return 1;
-    else
-        return 0;
-}
-
-int isFull(stack *s)
-{
-    if (s->top == s->size - 1)
-        return 1;
-    else
-        return 0;
-}
-
-stack * push(stack * p, char exp)
-{
-    if(isFull(p))
-        printf("Stack is empty!!");
-    else
-    {
-        p->top++;
-        p->arr[p->top] = exp;
-    }
-}
-
-char pop(stack * ptr)
-{
-    if(isEmpty(ptr))
-        printf("Stack is full!!");
-    else
-    {
-        char val = ptr->arr[ptr->top];
-        ptr->top--;
-        return val;
-    }
-}
-
-int parenthesisMatch(char * exp)
-{
-    stack * sp;
-    sp->size = 100;
-    sp->top = -1;
-    sp->arr = (char *)malloc(sp->size * sizeof(char));
-
-    for (int i = 0; exp[i] != '\0' ; i++)
-    {
-        if(exp[i] == '(')
-            push(sp, exp[i]);
-        else if(exp[i] == ')')
-        {
-            if(isEmpty(sp))
-                return 0;
-            pop(sp);
-        }
-    }
-    if(isEmpty(sp))
-        return 1;
-    else 
-        return 0;
-}
-
+#include<bits/stdc++.h>
+using namespcace std;
 int main()
 {
-    char * str = "(())()()";
+   int T;
+   cin >> T;
+   while(T--)
+   {
+      int n,X;
+      cin >> n >> X;
+      map<int,int> m1;
+      map<int,int> m2;
 
-    if(parenthesisMatch(str))
-        printf("IN SEQUEENCE !!");
-    else
-        printf("NOT IN SEQUEENCE !!");
-    return 0;
+      for(int i = 0 ; i < n ; i++ )
+      {
+         int x;
+         cin >> x;
+         m1[x]++;
+         m2[x^X]++;
+      }
+      map<int,int>::iterator iter;
+      int maxx = 0;
+      int minn = INT_MAX;
+      for(auto it = m1.begin() ; it != m1.end() ; ++it)
+      {
+         iter = m2.find(it->first);
+         if(iter != m2.end()){
+            if((it->second + m2[it->first]) > maxx)
+            {
+               maxx = (it->second + m2[it->first]);
+               minn = it->second;
+            }
+            else if((it->second + m2[it->first]) == maxx){
+                  minn = min(minn, m2[it->first]);
+            }
+         }
+      }
+      cout << maxx <<" "<< minn << "\n";
+   }
+   return 0;
 }

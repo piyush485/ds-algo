@@ -13,7 +13,7 @@ int main()
     node * head = NULL;
     node * temp = NULL;
     node * newnode = NULL;
-    for(int i = 0; i< 5;i++)
+    for(int i = 0; i < 5 ; i++)
     {
         newnode = (node*)malloc(sizeof(node));
         printf("Enter the new node: ");
